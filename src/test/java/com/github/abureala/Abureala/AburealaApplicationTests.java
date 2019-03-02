@@ -1,4 +1,4 @@
-package com.github.abureala.Abureala;
+/*package com.github.abureala.Abureala;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,4 +15,4 @@ public class AburealaApplicationTests {
 	public void contextLoads() {
 	}
 
-}
+}*/
