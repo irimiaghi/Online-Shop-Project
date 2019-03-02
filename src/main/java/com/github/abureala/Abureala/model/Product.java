@@ -1,4 +1,4 @@
-package com.github.abureala.Abureala.config.model;
+package com.github.abureala.Abureala.model;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.github.abureala.Abureala.config;
+package com.github.abureala.Abureala;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

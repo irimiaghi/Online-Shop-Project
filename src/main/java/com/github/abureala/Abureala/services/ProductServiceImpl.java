@@ -1,7 +1,8 @@
-package com.github.abureala.Abureala.config.services;
+package com.github.abureala.Abureala.services;
 
-import com.github.abureala.Abureala.config.model.Product;
-import com.github.abureala.Abureala.config.repositories.ProductRepository;
+import com.github.abureala.Abureala.model.Product;
+import com.github.abureala.Abureala.repositories.ProductRepository;
+import com.github.abureala.Abureala.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

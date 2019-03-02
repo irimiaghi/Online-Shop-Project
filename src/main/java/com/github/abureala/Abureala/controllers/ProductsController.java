@@ -1,7 +1,7 @@
-package com.github.abureala.Abureala.config.controllers;
+package com.github.abureala.Abureala.controllers;
 
-import com.github.abureala.Abureala.config.model.Product;
-import com.github.abureala.Abureala.config.services.ProductService;
+import com.github.abureala.Abureala.services.ProductService;
+import com.github.abureala.Abureala.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
