@@ -26,7 +26,7 @@
                 <a class="nav-link" href="<c:url value="/" />">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/products" />">Clients</a>
+                <a class="nav-link" href="<c:url value="/products" />">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>

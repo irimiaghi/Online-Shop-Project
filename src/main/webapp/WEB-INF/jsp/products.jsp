@@ -1,4 +1,4 @@
-<%@ page import="com.github.eciuca.sda.mywebapp.model.Client" %>
+<%@ page import="com.github.abureala.Abureala.model.Product" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
@@ -28,7 +28,7 @@
                 <a class="nav-link" href="<c:url value="/" />">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<c:url value="/products" />">Clients</a>
+                <a class="nav-link" href="<c:url value="/products" />">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
