@@ -1,3 +1,5 @@
+<%@ page import="com.github.eciuca.sda.mywebapp.model.Client" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
@@ -39,7 +41,13 @@
     </div>
 </nav>
 <div class="container mt-5">
-    <h1 class="hello-world-text">Hello, world!</h1>
+    <h1 class="hello-world-text">${companyName}'s products are</h1>
+    <%= request.getAttribute("productsList")%>
+    <ul>
+        <c:forEach items="${productsList}" var="product">
+            <li>Client id: ${product.id} Client name: ${product.name}</li>
+        </c:forEach>
+    </ul>
 </div>
 
 <!-- Optional JavaScript -->
