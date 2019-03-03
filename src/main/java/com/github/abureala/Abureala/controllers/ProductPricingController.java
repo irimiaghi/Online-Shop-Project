@@ -8,10 +8,10 @@ import java.util.List;
 @Controller
 public class ProductPricingController {
 
-    @RequestMapping(value = "/buy")
+    @RequestMapping(value = "/pricing")
     public String showPagePrice(Model model) {
 
-        return "Product_pricing";
+        return "pricing/pricing_page";
     }
 
 }

@@ -22,6 +22,6 @@ public class ProductsController {
         model.addAttribute("productsList", list);
         model.addAttribute("companyName", "Our company");
 
-        return "products/products";
+        return "products/products_page";
     }
 }
