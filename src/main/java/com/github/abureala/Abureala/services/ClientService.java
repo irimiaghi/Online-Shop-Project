@@ -8,7 +8,7 @@ public interface ClientService {
 
     List<Client> getAllClients();
 
-    Client createClient(String firstName, String lastName);
+    Client createClient(String firstName, String lastName, String email, String password, Boolean admin);
 
     void deleteClient(Long id);
 }

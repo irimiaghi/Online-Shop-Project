@@ -3,8 +3,18 @@
 <%@ include file="../common/header.jspf" %>
 <%@ include file="../common/navbar.jspf" %>
 
-
-<%@include file="login_form.jspf" %>
-
+<style>
+    .content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+<body class="text-center">
+    <div class="content">
+        <%@include file="login_form.jspf" %>
+    </div>
+</body>
 
 <%@ include file="../common/footer.jspf" %>

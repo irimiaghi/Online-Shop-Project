@@ -2,6 +2,8 @@
     <td>${client.id}</td>
     <td>${client.firstName}</td>
     <td>${client.lastName}</td>
+    <td>${client.email}</td>
+    <td>${client.password}</td>
     <td>
         <form:form cssClass="form-inline" method="post" action="/clients/delete" modelAttribute="deleteClientForm">
             <form:hidden path="clientId" value="${client.id}" />

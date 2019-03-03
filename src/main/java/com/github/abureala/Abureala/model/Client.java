@@ -18,6 +18,15 @@ public class Client {
     @Column
     private String lastName;
 
+    @Column
+    private String email;
+
+    @Column
+    private String password;
+
+    @Column
+    private Boolean admin;
+
     public Long getId() {
         return id;
     }
@@ -40,6 +49,28 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean isAdmin() {
+        return admin;
+    }
+    public void setAdmin(Boolean admin) {
+        admin = false;
+        this.admin = admin;
     }
 
     @Override

@@ -38,7 +38,7 @@ public class ClientsController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String createClient(@ModelAttribute(NEW_CLIENT_FORM) NewClientFormDto form) {
-        clientService.createClient(form.getFirstName(), form.getLastName());
+        clientService.createClient(form.getFirstName(), form.getLastName(), form.getEmail(), form.getPassword(), form.getAdmin());
 
         return "redirect:/clients";
     }

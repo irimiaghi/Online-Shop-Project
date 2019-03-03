@@ -18,11 +18,14 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client createClient(String firstName, String lastName) {
+    public Client createClient(String firstName, String lastName, String email, String password, Boolean admin) {
         Client client = new Client();
 
         client.setFirstName(firstName);
         client.setLastName(lastName);
+        client.setEmail(email);
+        client.setPassword(password);
+        client.setAdmin(false);
 
         return clientRepository.save(client);
     }
