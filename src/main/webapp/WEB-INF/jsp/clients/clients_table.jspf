@@ -1,0 +1,17 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<table class="table table-light">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${clientsList}" var="client">
+        <%@include file="client_row.jspf" %>
+    </c:forEach>
+    </tbody>
+</table>
