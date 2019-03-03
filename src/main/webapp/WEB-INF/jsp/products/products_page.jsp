@@ -1,5 +1,4 @@
-<%@ page import="com.github.abureala.Abureala.model.Product" %>
-<%@ page import="java.util.List" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../common/header.jspf" %>
 <%@ include file="../common/navbar.jspf" %>
