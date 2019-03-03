@@ -1,7 +1,8 @@
-package com.github.abureala.Abureala;
+package com.github;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class AburealaApplication {
