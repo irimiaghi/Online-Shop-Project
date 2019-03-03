@@ -12,6 +12,26 @@ public class Product {
     @Column
     private String name;
 
+    @Column
+    private String priceBuy;
+
+    @Column
+    private String priceRent;
+
+    public String getPriceBuy() {
+        return priceBuy;
+    }
+    public void setPriceBuy(String priceBuy) {
+        this.priceBuy = priceBuy;
+    }
+
+    public String getPriceRent() {
+        return priceRent;
+    }
+    public void setPriceRent(String priceRent) {
+        this.priceRent = priceRent;
+    }
+
     public Long getId() {
         return id;
     }
