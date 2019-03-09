@@ -1,9 +1,7 @@
 package com.github.abureala.Abureala.controllers;
 
 import com.github.abureala.Abureala.model.Product;
-import com.github.abureala.Abureala.repositories.ProductPricingRepository;
 import com.github.abureala.Abureala.services.ProductPricingService;
-import com.github.abureala.Abureala.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +26,7 @@ public class ProductPricingController {
             model.addAttribute("productId", productOptional.get().getId());
             model.addAttribute("productName",productOptional.get().getName());
             model.addAttribute("productBuyPrice",productOptional.get().getPriceBuy());
-            model.addAttribute("productRent",productOptional.get().getPriceRent());
+            model.addAttribute("productRentPrice", productOptional.get().getPriceRent());
             return "pricing/pricing_page";
         } else {
             return "pricing/pricing_error";
