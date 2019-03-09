@@ -4,14 +4,14 @@
 <%@ include file="../common/navbar.jspf" %>
 
 <div class="container mt-5">
-    <h1 class="hello-world-text">${companyName}'s clients are</h1>
+    <h1 class="hello-world-text">${pageContext.request.userPrincipal.name}'s favorite games are</h1>
 
     <div class="row">
-        <%@include file="clients_form.jspf" %>
+        <%@include file="favorites_form.jspf" %>
     </div>
 
     <div class="row">
-        <%@include file="clients_table.jspf" %>
+        <%@include file="favorites_table.jspf" %>
     </div>
 </div>
 

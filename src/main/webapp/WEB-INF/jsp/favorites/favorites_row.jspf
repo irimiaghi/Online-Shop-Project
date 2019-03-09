@@ -1,0 +1,14 @@
+<tr>
+    <td>${favorite.title}</td>
+    <td>${favorite.genre}</td>
+    <td>${favorite.year}</td>
+    <td>${favorite.ranking}</td>
+    <td>
+        <form:form cssClass="form-inline" method="post" action="/favorites/delete" modelAttribute="deleteFavoriteForm">
+            <form:hidden path="favoriteId" value="${favorite.id}"/>
+            <form:button type="submit" class="btn btn-danger delete-favorite-btn">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </form:button>
+        </form:form>
+    </td>
+</tr>

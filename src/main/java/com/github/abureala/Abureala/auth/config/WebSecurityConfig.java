@@ -1,4 +1,4 @@
-package com.github.abureala.Abureala.config;
+package com.github.abureala.Abureala.auth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

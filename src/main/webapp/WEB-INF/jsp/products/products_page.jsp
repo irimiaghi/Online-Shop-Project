@@ -3,15 +3,6 @@
 <%@ include file="../common/header.jspf" %>
 <%@ include file="../common/navbar.jspf" %>
 
-<div class="container mt-5">
-    <h1 class="hello-world-text">${companyName}'s products are</h1>
-    <%= request.getAttribute("productsList")%>
-    <ul>
-        <c:forEach items="${productsList}" var="product">
-            <li>Product id: ${product.id} Product name: ${product.name}</li>
-        </c:forEach>
-    </ul>
-</div>
 
 <div class="album py-5 bg-light">
     <div class="container">

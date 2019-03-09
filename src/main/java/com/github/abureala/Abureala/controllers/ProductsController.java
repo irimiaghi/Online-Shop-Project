@@ -20,7 +20,7 @@ public class ProductsController {
         List<Product> list = productService.giveAllProducts();
 
         model.addAttribute("productsList", list);
-        model.addAttribute("companyName", "Our company");
+        model.addAttribute("companyName", "Abureala");
 
         return "products/products_page";
     }

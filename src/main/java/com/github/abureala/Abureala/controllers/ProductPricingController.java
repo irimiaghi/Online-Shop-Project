@@ -29,7 +29,7 @@ public class ProductPricingController {
             model.addAttribute("productRentPrice", productOptional.get().getPriceRent());
             return "pricing/pricing_page";
         } else {
-            return "pricing/pricing_error";
+            return "error";
         }
     }
 }
