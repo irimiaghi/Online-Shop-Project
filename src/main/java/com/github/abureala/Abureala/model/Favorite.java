@@ -28,11 +28,6 @@ public class Favorite {
         return id;
     }
 
-    public Favorite setId(Long id) {
-        this.id = id;
-        return this;
-    }
-
     public String getTitle() {
         return Title;
     }

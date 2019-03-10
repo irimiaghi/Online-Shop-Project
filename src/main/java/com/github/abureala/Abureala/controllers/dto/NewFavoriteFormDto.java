@@ -9,10 +9,6 @@ public class NewFavoriteFormDto {
     private String Year;
     private int ranking;
 
-    public static String getNewFavoriteForm() {
-        return NEW_FAVORITE_FORM;
-    }
-
     public String getTitle() {
         return Title;
     }

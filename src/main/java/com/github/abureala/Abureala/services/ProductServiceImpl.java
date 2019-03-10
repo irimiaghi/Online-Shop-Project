@@ -16,4 +16,21 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> giveAllProducts() {
         return productRepository.findAll();
     }
+
+    @Override
+    public Product createProduct(String name, String priceBuy, String priceRent) {
+        Product product = new Product();
+
+        product.setName(name);
+        product.setPriceRent(priceRent);
+        product.setPriceBuy(priceBuy);
+        return productRepository.save(product);
+    }
+
+    @Override
+    public void deleteProduct(long id) {
+        productRepository.deleteById(id);
+    }
+
+
 }
