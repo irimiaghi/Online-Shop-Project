@@ -24,9 +24,8 @@ public class ProductPricingController {
         if (productOptional.isPresent()) {
 
             model.addAttribute("productId", productOptional.get().getId());
-            model.addAttribute("productName",productOptional.get().getName());
-            model.addAttribute("productBuyPrice",productOptional.get().getPriceBuy());
-            model.addAttribute("productRentPrice", productOptional.get().getPriceRent());
+            model.addAttribute("productName", productOptional.get().getName());
+            model.addAttribute("productBuyPrice", productOptional.get().getPriceBuy());
             return "pricing/pricing_page";
         } else {
             return null;

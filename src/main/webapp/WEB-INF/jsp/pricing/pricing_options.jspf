@@ -4,13 +4,10 @@
     </div>
     <div class="card-body">
         <h1 class="card-title pricing-card-title"> ${productBuyPrice}
-            <small class="text-muted">/ Buy</small>
+            <small class="text-muted">Buy</small>
         </h1>
         <ul class="list-unstyled mt-3 mb-4">
-            <li>10 users included</li>
-            <li>2 GB of storage</li>
-            <li>Email support</li>
-            <li>Help center access</li>
+            <h3>Product buy description</h3>
         </ul>
         <button type="button" class="btn btn-lg btn-block btn-outline-primary">Checkout</button>
     </div>
@@ -24,11 +21,9 @@
             <small class="text-muted">Rent</small>
         </h1>
         <ul class="list-unstyled mt-3 mb-4">
-            <li>20 users included</li>
-            <li>10 GB of storage</li>
-            <li>Priority email support</li>
-            <li>Help center access</li>
+            <h3>Product rent description</h3>
+
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Checkou</button>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Checkout</button>
     </div>
 </div>
