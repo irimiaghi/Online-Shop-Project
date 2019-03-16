@@ -1,5 +1,6 @@
 package com.github.abureala.Abureala.controllers;
 
+
 import com.github.abureala.Abureala.model.Product;
 import com.github.abureala.Abureala.services.ProductPricingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,11 @@ import java.util.Optional;
 import static com.github.abureala.Abureala.controllers.ProductsController.getProductData;
 
 @Controller
-@RequestMapping(value = "/pricing")
-public class ProductPricingController {
-    @Autowired
-    private ProductPricingService productPricingService;
+@RequestMapping("/checkout")
+public class CheckoutController {
 
+    @Autowired
+    ProductPricingService productPricingService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPagePrice(@PathVariable("id") Long id, Model model) {
@@ -26,9 +27,11 @@ public class ProductPricingController {
         if (productOptional.isPresent()) {
 
             getProductData(model, productOptional);
-            return "pricing/pricing_page";
+            return "checkout/checkout_page";
         } else {
             return null;
         }
     }
+
+
 }

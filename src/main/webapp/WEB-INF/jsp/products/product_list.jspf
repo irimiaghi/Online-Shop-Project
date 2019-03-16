@@ -1,5 +1,3 @@
 <div class="row">
-    <c:forEach items="${productsList}" var="product">
-        <%@include file="product_box.jspf" %>
-    </c:forEach>
+    <%@include file="product_box.jspf" %>
 </div>
