@@ -29,6 +29,7 @@ public class ManagementController {
         model.addAttribute("productsList", list);
         model.addAttribute(NEW_PRODUCT_FORM, new NewProductDto());
         model.addAttribute(DELETE_PRODUCT_FORM, new DeleteProductDto());
+        model.addAttribute("companyName", "Abureala");
 
         return "account/management_page";
     }

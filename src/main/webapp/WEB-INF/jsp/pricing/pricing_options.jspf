@@ -9,7 +9,7 @@
         <ul class="list-unstyled mt-3 mb-4">
             <h3>Product buy description</h3>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Checkout</button>
+        <a class="btn btn-lg btn-block btn-outline-primary" href="<c:url value="../checkout/buy/${productId}"/>">Checkout</a>
     </div>
 </div>
 <div class="card mb-4 shadow-sm">
@@ -24,6 +24,6 @@
             <h3>Product rent description</h3>
 
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Checkout</button>
+        <a class="btn btn-lg btn-block btn-outline-primary" href="<c:url value="../checkout/rent/${productId}"/>">Checkout</a>
     </div>
 </div>

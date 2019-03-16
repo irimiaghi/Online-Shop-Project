@@ -3,7 +3,7 @@
     <td>${product.priceBuy}</td>
     <td>${product.priceRent}</td>
     <td>
-        <form:form cssClass="form-inline" method="post" action="/product/delete" modelAttribute="deleteProductForm">
+        <form:form cssClass="form-inline" method="post" action="/management/delete" modelAttribute="deleteProductForm">
             <form:hidden path="productId" value="${product.id}"/>
             <form:button type="submit" class="btn btn-danger delete-favorite-btn">
                 <i class="fa fa-trash" aria-hidden="true"></i>

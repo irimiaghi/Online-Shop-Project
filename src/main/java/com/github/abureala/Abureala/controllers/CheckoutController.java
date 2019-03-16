@@ -21,17 +21,32 @@ public class CheckoutController {
     @Autowired
     ProductPricingService productPricingService;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String showPagePrice(@PathVariable("id") Long id, Model model) {
+    @RequestMapping(value = "/buy/{id}", method = RequestMethod.GET)
+    public String showPageBuy(@PathVariable("id") Long id, Model model) {
         Optional<Product> productOptional = productPricingService.getProductById(id);
         if (productOptional.isPresent()) {
 
             getProductData(model, productOptional);
-            return "checkout/checkout_page";
+            return "checkout/checkout_page_buy";
         } else {
             return null;
         }
     }
 
+    @RequestMapping(value = "/rent/{id}", method = RequestMethod.GET)
+    public String showPageRent(@PathVariable("id") Long id, Model model) {
+        Optional<Product> productOptional = productPricingService.getProductById(id);
+        if (productOptional.isPresent()) {
 
+            getProductData(model, productOptional);
+            return "checkout/checkout_page_rent";
+        } else {
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/succes", method = RequestMethod.GET)
+    public String showPageSucces() {
+        return "checkout/checkout_succes_page";
+    }
 }

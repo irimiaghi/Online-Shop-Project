@@ -3,7 +3,6 @@
         <form:label path="name" for="name" cssClass="sr-only">Name</form:label>
         <form:input path="name" id="name" type="text" placeholder="name"/>
     </div>
-    F
     <div class="form-group mb-2 mx-sm-2">
         <form:label path="priceBuy" for="priceBuy" cssClass="sr-only">Buy price</form:label>
         <form:input path="priceBuy" id="priceBuy" type="text" placeholder="Buy price"/>

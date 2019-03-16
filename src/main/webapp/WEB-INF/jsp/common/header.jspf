@@ -1,4 +1,5 @@
 <!doctype html>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <html lang="en">
 <head>
     <!-- Required meta tags -->

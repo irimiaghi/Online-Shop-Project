@@ -1,6 +1,9 @@
 package com.github.abureala.Abureala.auth.model;
 
+import com.github.abureala.Abureala.model.Favorite;
+
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,7 +18,8 @@ public class User {
     private String passwordConfirm;
     @ManyToMany
     private Set<Role> roles;
-
+    @OneToMany(mappedBy = "id")
+    private List<Favorite> favoriteList;
     public Long getId() {
         return id;
     }
