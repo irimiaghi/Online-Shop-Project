@@ -1,5 +1,6 @@
 package com.github.abureala.Abureala.auth.service;
 
+import com.github.abureala.Abureala.auth.model.Role;
 import com.github.abureala.Abureala.auth.model.User;
 import com.github.abureala.Abureala.auth.repositories.RoleRepository;
 import com.github.abureala.Abureala.auth.repositories.UserRepository;
@@ -8,6 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -22,7 +25,10 @@ public class UserServiceImpl implements UserService {
     public void save(User user) {
 
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>((roleRepository.findAll())));
+        Optional<Role> role = roleRepository.findById(1L);
+        Set<Role> myRole = new HashSet<>();
+        myRole.add(role.get());
+        user.setRoles(myRole);
         userRepository.save(user);
     }
 
