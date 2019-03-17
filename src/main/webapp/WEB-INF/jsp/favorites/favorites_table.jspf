@@ -1,0 +1,16 @@
+<table class="table table-light">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Year</th>
+        <th scope="col">Ranking</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${favoriteByUserList}" var="favorite">
+        <%@include file="favorites_row.jspf" %>
+    </c:forEach>
+    </tbody>
+</table>

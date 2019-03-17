@@ -1,0 +1,6 @@
+<div class="row">
+    <h2>Results for ${searchTerm}:<h2>
+        <c:forEach items="${searchResult}" var="result">
+            <%@include file="product_search_box.jspf" %>
+        </c:forEach>
+</div>

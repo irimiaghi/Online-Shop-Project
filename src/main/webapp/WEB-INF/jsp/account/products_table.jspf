@@ -3,17 +3,15 @@
 <table class="table table-light">
     <thead class="thead-light">
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Email</th>
-        <th scope="col">Password</th>
+        <th scope="col">Name</th>
+        <th scope="col">Buy Price</th>
+        <th scope="col">Rent Price</th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${clientsList}" var="client">
-        <%@include file="client_row.jspf" %>
+    <c:forEach items="${productsList}" var="product">
+        <%@include file="management_row.jspf" %>
     </c:forEach>
     </tbody>
 </table>
