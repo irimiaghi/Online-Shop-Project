@@ -1,6 +1,8 @@
 package com.github.abureala.Abureala.model;
 
 
+import com.github.abureala.Abureala.auth.model.User;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -24,6 +26,9 @@ public class Favorite {
     @Column
     private int Ranking;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     public Long getId() {
         return id;
     }
@@ -61,6 +66,20 @@ public class Favorite {
 
     public Favorite setRanking(int ranking) {
         Ranking = ranking;
+        return this;
+    }
+
+    public Favorite setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Favorite setUser(User user) {
+        this.user = user;
         return this;
     }
 

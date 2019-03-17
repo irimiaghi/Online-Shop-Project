@@ -18,14 +18,24 @@ public class User {
     private String passwordConfirm;
     @ManyToMany
     private Set<Role> roles;
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "user")
     private List<Favorite> favoriteList;
+
     public Long getId() {
         return id;
     }
 
     public User setId(Long id) {
         this.id = id;
+        return this;
+    }
+
+    public List<Favorite> getFavoriteList() {
+        return favoriteList;
+    }
+
+    public User setFavoriteList(List<Favorite> favoriteList) {
+        this.favoriteList = favoriteList;
         return this;
     }
 
