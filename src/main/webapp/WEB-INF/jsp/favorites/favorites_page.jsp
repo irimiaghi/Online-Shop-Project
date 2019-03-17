@@ -7,13 +7,14 @@
     <h1 class="hello-world-text">${pageContext.request.userPrincipal.name}'s favorite games are</h1>
 
 
-    <div class="row">
-        <%@include file="favorites_form.jspf" %>
-    </div>
+    <%--<  <div class="row">--%>
+    <%--<%@include file="favorites_form.jspf" %>--%>
+    <%--</div>--%>
 
     <div class="row">
         <%@include file="favorites_table.jspf" %>
     </div>
 </div>
+
 
 <%@ include file="../common/footer.jspf" %>

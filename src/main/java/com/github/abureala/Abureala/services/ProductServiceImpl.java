@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
 
     public List<Product> giveAllProducts() {
         return productRepository.findAll();
@@ -34,10 +34,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Optional<Product>> findByname(String name) {
-        List<Optional<Product>> product = productRepository.findAllByName(name);
+    public List<Product> findAllByNameLike(String name) {
+        List<Product> product = productRepository.findByNameIgnoreCaseContaining(name);
         return product;
     }
 
-
+    @Override
+    public void saveProducts(List<Product> list) {
+        productRepository.saveAll(list);
+    }
 }

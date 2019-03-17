@@ -1,17 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<table class="table table-light">
-    <thead class="thead-light">
-    <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Buy Price</th>
-        <th scope="col">Rent Price</th>
+<form:form modelAttribute="productListForm" id="form-management" method="post" action="/management">
+    <%--<form:hidden path="productList"/>--%>
+    <form id="dummy-form"></form>
+    <table class="table table-light" id="product-list-table">
+        <thead class="thead-light">
+        <th scope="col" contenteditable="false">Name</th>
+        <th scope="col" contenteditable="false">Buy Price</th>
+        <th scope="col" contenteditable="false">Rent Price</th>
         <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${productsList}" var="product">
-        <%@include file="management_row.jspf" %>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${productListForm.productList}" var="product" varStatus="status">
+            <%@include file="management_row.jspf" %>
+        </c:forEach>
+        </tbody>
+    </table>
+</form:form>
