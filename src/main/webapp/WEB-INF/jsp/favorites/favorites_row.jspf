@@ -1,5 +1,5 @@
 <tr>
-    <td>${favorite.title}</td>
+    <td>${favorite.title} </td>
     <td>${favorite.genre}</td>
     <td>${favorite.year}</td>
     <td>${favorite.ranking}</td>
@@ -10,5 +10,6 @@
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </form:button>
         </form:form>
+
     </td>
 </tr>

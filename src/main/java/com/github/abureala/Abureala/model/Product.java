@@ -1,5 +1,6 @@
 package com.github.abureala.Abureala.model;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -8,8 +9,7 @@ public class Product {
     @Id
     @GeneratedValue
     private Long id;
-
-    @Column
+    @Column(unique = true)
     private String name;
 
     @Column
@@ -21,6 +21,7 @@ public class Product {
     public String getPriceBuy() {
         return priceBuy;
     }
+
     public void setPriceBuy(String priceBuy) {
         this.priceBuy = priceBuy;
     }
@@ -28,6 +29,7 @@ public class Product {
     public String getPriceRent() {
         return priceRent;
     }
+
     public void setPriceRent(String priceRent) {
         this.priceRent = priceRent;
     }
@@ -35,6 +37,7 @@ public class Product {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -42,6 +45,7 @@ public class Product {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }

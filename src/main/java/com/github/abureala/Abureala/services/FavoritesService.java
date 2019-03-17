@@ -9,7 +9,7 @@ public interface FavoritesService {
 
     List<Favorite> getAllFavorites();
 
-    public Favorite createFavorite(String title, String genre, String year, int ranking, User user);
+    Favorite createFavorite(String title, String genre, String year, int ranking, User user);
 
     void deleteFavorite(Long id);
 

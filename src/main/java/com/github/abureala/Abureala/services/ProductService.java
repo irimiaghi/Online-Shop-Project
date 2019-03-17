@@ -3,7 +3,6 @@ package com.github.abureala.Abureala.services;
 import com.github.abureala.Abureala.model.Product;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProductService {
 
@@ -13,6 +12,8 @@ public interface ProductService {
 
     void deleteProduct(long id);
 
-    List<Optional<Product>> findByname(String name);
+    List<Product> findAllByNameLike(String name);
+
+    void saveProducts(List<Product> list);
 
 }

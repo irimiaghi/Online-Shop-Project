@@ -1,13 +1,16 @@
-<tr>
-    <td>${product.name}</td>
-    <td>${product.priceBuy}</td>
-    <td>${product.priceRent}</td>
+<tr contenteditable="false" id="my_table">
+    <form:input type="hidden" path="productList[${status.index}].id" value="${product.id}"/>
+    <td><input name="productList[${status.index}].name" value="${product.name}" readonly/></td>
+    <td><input name="productList[${status.index}].priceBuy" value="${product.priceBuy}" readonly/></td>
+    <td><input name="productList[${status.index}].priceRent" value="${product.priceRent}" readonly/></td>
     <td>
-        <form:form cssClass="form-inline" method="post" action="/management/delete" modelAttribute="deleteProductForm">
+        <form:form id="product-form-${product.id}" cssClass="form-inline" method="post" action="/management/delete"
+                   modelAttribute="deleteProductForm">
             <form:hidden path="productId" value="${product.id}"/>
             <form:button type="submit" class="btn btn-danger delete-favorite-btn">
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </form:button>
         </form:form>
+        <a class="btn btn-outline-secondary" id="edit_link" onclick="edit()">Edit</a>
     </td>
 </tr>

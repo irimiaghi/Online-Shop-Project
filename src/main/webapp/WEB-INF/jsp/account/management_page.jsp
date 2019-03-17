@@ -13,5 +13,18 @@
         <%@include file="products_table.jspf" %>
     </div>
 </div>
+<script>
+    function edit() {
+        var tableCellsAreNotEditable = $("#product-list-table tbody tr")[0].getAttribute("contenteditable") == "false"
+        if (tableCellsAreNotEditable) {
+            $("#product-list-table tbody tr").attr("contenteditable", "true")
+            $("#product-list-table tbody tr td input").attr("readonly", false)
+        } else {
 
+            $("#form-management")
+                .submit();
+        }
+
+    }
+</script>
 <%@ include file="../common/footer.jspf" %>
