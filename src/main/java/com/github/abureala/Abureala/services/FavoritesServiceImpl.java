@@ -36,4 +36,9 @@ public class FavoritesServiceImpl implements FavoritesService {
     public void deleteFavorite(Long id) {
         favoriteRepository.deleteById(id);
     }
+
+    @Override
+    public List<Favorite> getAllByUser(User user) {
+        return favoriteRepository.getAllByUser(user);
+    }
 }

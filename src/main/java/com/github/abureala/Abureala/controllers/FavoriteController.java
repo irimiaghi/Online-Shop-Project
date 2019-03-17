@@ -6,6 +6,7 @@ import com.github.abureala.Abureala.auth.service.UserService;
 import com.github.abureala.Abureala.controllers.dto.DeleteFavoriteFormDto;
 import com.github.abureala.Abureala.controllers.dto.NewFavoriteFormDto;
 import com.github.abureala.Abureala.model.Favorite;
+import com.github.abureala.Abureala.repositories.FavoriteRepository;
 import com.github.abureala.Abureala.services.FavoritesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -16,9 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 import static com.github.abureala.Abureala.controllers.dto.DeleteFavoriteFormDto.DELETE_FAVORITE_FORM;
 import static com.github.abureala.Abureala.controllers.dto.NewFavoriteFormDto.NEW_FAVORITE_FORM;
@@ -33,26 +32,25 @@ public class FavoriteController {
     UserRepository userRepository;
     @Autowired
     UserService userService;
+    @Autowired
+    FavoriteRepository favoriteRepository;
+
+
 
     @RequestMapping(method = RequestMethod.GET)
     public String showFavorites(Model model) {
-        List<Favorite> list = favoritesService.getAllFavorites();
-        model.addAttribute("favoritesList", list);
+        List<Favorite> list = favoritesService.getAllByUser(getUserAuthStuff());
+        model.addAttribute("favoriteByUserList", list);
         model.addAttribute("companyName", "Abureală");
         model.addAttribute(NEW_FAVORITE_FORM, new NewFavoriteFormDto());
         model.addAttribute(DELETE_FAVORITE_FORM, new DeleteFavoriteFormDto());
-
         return "favorites/favorites_page";
     }
 
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String createFavorite(@ModelAttribute(NEW_FAVORITE_FORM) NewFavoriteFormDto form) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) Objects.requireNonNull(authentication).getPrincipal();
-        String username = user.getUsername();
-        User userr = userService.findByUsername(username);
-        favoritesService.createFavorite(form.getTitle(), form.getGenre(), form.getYear(), form.getRanking(), userr);
+        favoritesService.createFavorite(form.getTitle(), form.getGenre(), form.getYear(), form.getRanking(), getUserAuthStuff());
 
         return "redirect:/favorites";
     }
@@ -64,20 +62,20 @@ public class FavoriteController {
         return "redirect:/favorites";
     }
 
-    private void createStuff() {
-        User user1 = new User();
-        user1.setId(4L);
-        List<Favorite> favL = new LinkedList<>();
-        user1.setFavoriteList(favL);
-        List<Favorite> favoriteList = user1.getFavoriteList();
-        Favorite fav1 = new Favorite();
-        fav1.setGenre("gen");
-        fav1.setRanking(5);
-        fav1.setTitle("title");
-        fav1.setYear("year");
-        fav1.setId(3L);
-        fav1.setUser(user1);
-        favoriteList.add(fav1);
-        userRepository.save(user1);
+    //    private void createStuff() {
+//        User user1 = userRepository.getOne(1L);
+//        List<Favorite> favL = new LinkedList<>();
+//        user1.setFavoriteList(favL);
+//        List<Favorite> favoriteList = user1.getFavoriteList();
+//        Favorite fav1 = favoriteRepository.getOne(1L);
+//        fav1.setUser(user1);
+//        favoriteList.add(fav1);
+//        userRepository.save(user1);
+//    }
+    private User getUserAuthStuff() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) authentication.getPrincipal();
+        String username = user.getUsername();
+        return userService.findByUsername(username);
     }
 }

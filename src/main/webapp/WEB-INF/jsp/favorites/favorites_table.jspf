@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${favoritesList}" var="favorite">
+    <c:forEach items="${favoriteByUserList}" var="favorite">
         <%@include file="favorites_row.jspf" %>
     </c:forEach>
     </tbody>

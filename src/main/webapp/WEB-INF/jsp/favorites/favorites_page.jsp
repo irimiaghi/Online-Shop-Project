@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <h1 class="hello-world-text">${pageContext.request.userPrincipal.name}'s favorite games are</h1>
 
-    <c:forEach items="${pageContext.request.userPrincipal.name}."
+
     <div class="row">
         <%@include file="favorites_form.jspf" %>
     </div>

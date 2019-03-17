@@ -12,4 +12,6 @@ public interface FavoritesService {
     public Favorite createFavorite(String title, String genre, String year, int ranking, User user);
 
     void deleteFavorite(Long id);
+
+    List<Favorite> getAllByUser(User user);
 }
