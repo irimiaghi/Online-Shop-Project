@@ -14,15 +14,13 @@ public class NewFavoriteFormDto {
     private String Year;
     private int ranking;
 
-    private com.github.abureala.Abureala.auth.model.User userr = userRepository.findByUsername(username);
-    private Long userId = userr.getId();
 
+    private Long userId;
 
-    public NewFavoriteFormDto setUserId(String genre) {
-        userId = userId;
+    public NewFavoriteFormDto setUserId(Long userId) {
+        this.userId = userId;
         return this;
     }
-
 
     public String getTitle() {
         return Title;

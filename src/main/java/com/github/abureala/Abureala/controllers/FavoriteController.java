@@ -52,7 +52,7 @@ public class FavoriteController {
         org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) Objects.requireNonNull(authentication).getPrincipal();
         String username = user.getUsername();
         User userr = userService.findByUsername(username);
-        favoritesService.createFavorite(form.getTitle(), form.getGenre(), form.getYear(), form.getRanking(), form.setUserId());
+        favoritesService.createFavorite(form.getTitle(), form.getGenre(), form.getYear(), form.getRanking(), userr);
 
         return "redirect:/favorites";
     }
